@@ -30,6 +30,7 @@
 
 <style>
     .segment {
+        --transition-speed: 0.2s;
         --base-width: 8px;
         --base-height: 24px;
         --width: var(--base-width);
@@ -48,9 +49,10 @@
             0 0 0 -1px #ffffff00;
         transform: scaleX(1);
         transition:
-            transform 0.3s ease,
-            height 0.3s ease,
-            box-shadow 0.3s ease;
+            transform var(--transition-speed) ease,
+            height var(--transition-speed) ease,
+            background var(--transition-speed) ease,
+            box-shadow var(--transition-speed) ease;
     }
     .segment.big {
         --base-width: 8px;
