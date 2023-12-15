@@ -8,7 +8,7 @@
     let min: Writable<number> = writable(0)
     let max: Writable<number> = writable(1)
     let optimum: Writable<number> = writable(0.65)
-    let value: Writable<number> = writable(0.6)
+    let value: Writable<number> = writable(0.36)
 </script>
 
 <Presentation {min} {max} {optimum} {value}>
