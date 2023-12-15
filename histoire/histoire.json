@@ -1,0 +1,50 @@
+{
+  "stories": [
+    {
+      "id": "src-lib-meter-meter-story-svelte",
+      "title": "Meter component",
+      "group": null,
+      "layout": {
+        "type": "single",
+        "iframe": true
+      },
+      "icon": null,
+      "iconColor": null,
+      "docsOnly": false,
+      "variants": [
+        {
+          "id": "src-lib-meter-meter-story-svelte-0",
+          "title": "Meter with container width > 320px",
+          "icon": null,
+          "iconColor": null
+        },
+        {
+          "id": "src-lib-meter-meter-story-svelte-1",
+          "title": "Meter with container width <= 320px",
+          "icon": null,
+          "iconColor": null
+        }
+      ],
+      "relativePath": "src/lib/Meter/Meter.story.svelte",
+      "supportPluginId": "svelte4",
+      "treePath": [
+        "Meter component"
+      ],
+      "virtual": false,
+      "markdownFile": {
+        "id": "src-lib-meter-meter-story-md",
+        "relativePath": "src/lib/Meter/Meter.story.md",
+        "isRelatedToStory": true,
+        "frontmatter": {}
+      }
+    }
+  ],
+  "markdownFiles": [
+    {
+      "id": "src-lib-meter-meter-story-md",
+      "relativePath": "src/lib/Meter/Meter.story.md",
+      "isRelatedToStory": true,
+      "frontmatter": {}
+    }
+  ]
+}
