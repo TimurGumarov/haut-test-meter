@@ -9,10 +9,10 @@
         "preview": "vite preview",
         "check": "svelte-check --tsconfig ./tsconfig.json",
         "wdio": "wdio run ./wdio.conf.ts",
-        "deploy": "npm run build && npx gh-pages -d dist",
         "story:dev": "histoire dev",
         "story:build": "histoire build",
-        "story:preview": "histoire preview"
+        "story:preview": "histoire preview",
+        "deploy": "npm run build && npm run story:build && npx gh-pages -d dist"
     },
     "devDependencies": {
         "@histoire/plugin-svelte": "^0.17.6",
