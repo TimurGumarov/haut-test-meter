@@ -63,7 +63,6 @@
     .container {
         display: flex;
         flex-flow: column;
-        gap: 40px;
         padding: 33px;
         resize: horizontal;
         min-width: 300px;
