@@ -7,15 +7,26 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "wdio": "wdio run ./wdio.conf.ts"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.0.1",
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/svelte": "^4.0.5",
     "@tsconfig/svelte": "^5.0.2",
+    "@wdio/browser-runner": "^8.26.1",
+    "@wdio/cli": "^8.26.1",
+    "@wdio/mocha-framework": "^8.24.12",
+    "@wdio/spec-reporter": "^8.24.12",
+    "prettier": "^3.1.1",
+    "prettier-plugin-svelte": "^3.1.2",
     "svelte": "^4.2.8",
     "svelte-check": "^3.6.2",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "vite": "^5.0.8",
+    "wdio-eslinter-service": "^0.0.4",
+    "wdio-vite-service": "^1.0.5"
   }
 }
