@@ -25,7 +25,7 @@
 
 <div class="wrap">
     <p>Width: {container && container.offsetWidth}px</p>
-    <p>You can find resize element to change container width.</p>
+    <p>You can change the width by dragging the bottom right corner.</p>
     <div
         class="container"
         style:width={startWidth + 'px'}
