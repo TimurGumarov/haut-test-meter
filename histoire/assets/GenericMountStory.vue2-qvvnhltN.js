@@ -60,7 +60,7 @@ function create_fragment$5(ctx) {
       svg = svg_element("svg");
       path = svg_element("path");
       attr_dev(path, "d", "M17.3087 11.1735C17.6859 10.9964 18.0882 11.3677 17.983 11.7711C17.6242 13.1447 16.919 14.4519 15.8334 15.5375C12.6094 18.7611 7.45186 18.8285 4.31137 15.6883C1.17088 12.5482 1.23945 7.38999 4.46337 4.16641C5.54905 3.08084 6.8553 2.37579 8.23012 2.01698C8.63354 1.91186 9.00382 2.31409 8.82782 2.69118C7.68271 5.13543 8.0587 8.06304 9.99808 10.0022C11.9363 11.9425 14.8642 12.3185 17.3087 11.1735Z");
-      add_location(path, file$5, 13, 4, 212);
+      add_location(path, file$5, 14, 4, 240);
       attr_dev(
         svg,
         "width",
@@ -81,6 +81,7 @@ function create_fragment$5(ctx) {
         ctx[2]
       );
       attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
+      attr_dev(svg, "data-testid", "moon-icon");
       attr_dev(svg, "class", "s-Gz6xCtVjorkG");
       add_location(svg, file$5, 6, 0, 102);
     },
@@ -209,7 +210,7 @@ function create_fragment$4(ctx) {
       svg = svg_element("svg");
       path = svg_element("path");
       attr_dev(path, "d", "M13 3C13 2.44772 12.5523 2 12 2C11.4477 2 11 2.44772 11 3V4C11 4.55228 11.4477 5 12 5C12.5523 5 13 4.55228 13 4V3ZM6.30711 4.89289C5.91658 4.50237 5.28342 4.50237 4.89289 4.89289C4.50237 5.28342 4.50237 5.91658 4.89289 6.30711L5.59289 7.00711C5.98342 7.39763 6.61658 7.39763 7.00711 7.00711C7.39763 6.61658 7.39763 5.98342 7.00711 5.59289L6.30711 4.89289ZM19.1071 6.30711C19.4976 5.91658 19.4976 5.28342 19.1071 4.89289C18.7166 4.50237 18.0834 4.50237 17.6929 4.89289L16.9929 5.59289C16.6024 5.98342 16.6024 6.61658 16.9929 7.00711C17.3834 7.39763 18.0166 7.39763 18.4071 7.00711L19.1071 6.30711ZM3 11C2.44772 11 2 11.4477 2 12C2 12.5523 2.44772 13 3 13H4C4.55228 13 5 12.5523 5 12C5 11.4477 4.55228 11 4 11H3ZM20 11C19.4477 11 19 11.4477 19 12C19 12.5523 19.4477 13 20 13H21C21.5523 13 22 12.5523 22 12C22 11.4477 21.5523 11 21 11H20ZM7.00711 18.4071C7.39763 18.0166 7.39763 17.3834 7.00711 16.9929C6.61658 16.6024 5.98342 16.6024 5.59289 16.9929L4.89289 17.6929C4.50237 18.0834 4.50237 18.7166 4.89289 19.1071C5.28342 19.4976 5.91658 19.4976 6.30711 19.1071L7.00711 18.4071ZM18.4071 16.9929C18.0166 16.6024 17.3834 16.6024 16.9929 16.9929C16.6024 17.3834 16.6024 18.0166 16.9929 18.4071L17.6929 19.1071C18.0834 19.4976 18.7166 19.4976 19.1071 19.1071C19.4976 18.7166 19.4976 18.0834 19.1071 17.6929L18.4071 16.9929ZM13 20C13 19.4477 12.5523 19 12 19C11.4477 19 11 19.4477 11 20V21C11 21.5523 11.4477 22 12 22C12.5523 22 13 21.5523 13 21V20ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z");
-      add_location(path, file$4, 13, 4, 212);
+      add_location(path, file$4, 14, 4, 239);
       attr_dev(
         svg,
         "width",
@@ -230,6 +231,7 @@ function create_fragment$4(ctx) {
         ctx[2]
       );
       attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
+      attr_dev(svg, "data-testid", "sun-icon");
       attr_dev(svg, "class", "s-gewHTvhp1HWm");
       add_location(svg, file$4, 6, 0, 102);
     },
@@ -477,6 +479,7 @@ function create_fragment$3(ctx) {
       if (if_block)
         if_block.c();
       attr_dev(div, "class", "icon s-bgAsj7upK8sS");
+      attr_dev(div, "data-testid", "icon-contaainer");
       add_location(div, file$3, 11, 0, 260);
     },
     l: function claim(nodes) {
@@ -1047,8 +1050,9 @@ function create_fragment$1(ctx) {
       t7 = space();
       create_component(icon1.$$.fragment);
       attr_dev(div0, "class", "bar s-flum80glNey2");
-      add_location(div0, file$1, 60, 4, 1337);
+      add_location(div0, file$1, 60, 4, 1367);
       attr_dev(div1, "class", "meter s-flum80glNey2");
+      attr_dev(div1, "data-testid", "meter-container");
       add_location(div1, file$1, 58, 0, 1245);
     },
     l: function claim(nodes) {
@@ -1845,7 +1849,7 @@ class Meter_story extends SvelteComponentDev {
 }
 let files = [{ "id": "src-lib-meter-meter-story-svelte", "path": ["Meter component"], "filePath": "src/lib/Meter/Meter.story.svelte", "story": { "id": "src-lib-meter-meter-story-svelte", "title": "Meter component", "group": null, "layout": { "type": "single", "iframe": true }, "icon": null, "iconColor": null, "docsOnly": false, "variants": [{ "id": "src-lib-meter-meter-story-svelte-0", "title": "Meter with container width > 320px", "icon": null, "iconColor": null }, { "id": "src-lib-meter-meter-story-svelte-1", "title": "Meter with container width <= 320px", "icon": null, "iconColor": null }] }, "supportPluginId": "svelte4", "docsFilePath": "src/lib/Meter/Meter.story.md", "index": 0, component: Meter_story, source: () => __vitePreload(() => import("./__resolved__virtual_story-source_src-lib-meter-meter-story-svelte-lDkkJYrs.js"), true ? __vite__mapDeps([]) : void 0) }];
 let tree = [{ "title": "Meter component", "index": 0 }];
-const config = { "plugins": [{ "name": "builtin:tailwind-tokens" }, { "name": "builtin:vanilla-support", "supportPlugin": { "id": "vanilla", "moduleName": "/Users/devspace/Developer/DevProjects/haut-test-meter/node_modules/histoire/dist/node/builtin-plugins/vanilla-support", "setupFn": "setupVanilla" } }, { "name": "@histoire/plugin-svelte", "supportPlugin": { "id": "svelte4", "moduleName": "@histoire/plugin-svelte", "setupFn": ["setupSvelte3", "setupSvelte4"] }, "commands": [{ "id": "histoire:plugin-svelte:generate-story", "label": "Generate Svelte 3 story from component", "icon": "https://svelte.dev/favicon.png", "searchText": "generate create", "clientSetupFile": "@histoire/plugin-svelte/dist/commands/generate-story.client.js" }] }], "outDir": "/Users/devspace/Developer/DevProjects/haut-test-meter/dist/histoire", "storyMatch": ["**/*.story.vue", "**/*.story.svelte"], "storyIgnored": ["**/node_modules/**", "**/dist/**"], "supportMatch": [{ "id": "vanilla", "patterns": ["**/*.js"], "pluginIds": ["vanilla"] }, { "id": "svelte", "patterns": ["**/*.svelte"], "pluginIds": ["svelte4"] }], "tree": { "file": "title", "order": "asc" }, "theme": { "title": "Histoire", "colors": { "primary": { "50": "#fff7ed", "100": "#ffedd5", "200": "#fed7aa", "300": "#fdba74", "400": "#fb923c", "500": "#f97316", "600": "#ea580c", "700": "#c2410c", "800": "#9a3412", "900": "#7c2d12" }, "gray": { "50": "#fafafa", "100": "#f4f4f5", "200": "#e4e4e7", "300": "#d4d4d8", "400": "#a1a1aa", "500": "#71717a", "600": "#52525b", "700": "#3f3f46", "750": "#323238", "800": "#27272a", "850": "#1f1f21", "900": "#18181b", "950": "#101012" } }, "defaultColorScheme": "auto", "storeColorScheme": true, "darkClass": "dark", "logo": { "square": "@histoire/plugin-svelte/assets/histoire-svelte.svg", "light": "@histoire/plugin-svelte/assets/histoire-svelte-text.svg", "dark": "@histoire/plugin-svelte/assets/histoire-svelte-text.svg" } }, "responsivePresets": [{ "label": "Mobile (Small)", "width": 320, "height": 560 }, { "label": "Mobile (Medium)", "width": 360, "height": 640 }, { "label": "Mobile (Large)", "width": 414, "height": 896 }, { "label": "Tablet", "width": 768, "height": 1024 }, { "label": "Laptop (Small)", "width": 1024, "height": null }, { "label": "Laptop (Large)", "width": 1366, "height": null }, { "label": "Desktop", "width": 1920, "height": null }, { "label": "4K", "width": 3840, "height": null }], "backgroundPresets": [{ "label": "Transparent", "color": "transparent", "contrastColor": "#333" }, { "label": "White", "color": "#fff", "contrastColor": "#333" }, { "label": "Light gray", "color": "#aaa", "contrastColor": "#000" }, { "label": "Dark gray", "color": "#333", "contrastColor": "#fff" }, { "label": "Black", "color": "#000", "contrastColor": "#eee" }], "sandboxDarkClass": "dark", "routerMode": "hash", "build": { "excludeFromVendorsChunk": [] }, "viteIgnorePlugins": ["vite-plugin-sveltekit-compile"], "viteNodeTransformMode": { "web": [{}] } };
+const config = { "plugins": [{ "name": "builtin:tailwind-tokens" }, { "name": "builtin:vanilla-support", "supportPlugin": { "id": "vanilla", "moduleName": "/Users/devspace/Developer/DevProjects/haut-test-meter/node_modules/histoire/dist/node/builtin-plugins/vanilla-support", "setupFn": "setupVanilla" } }, { "name": "@histoire/plugin-svelte", "supportPlugin": { "id": "svelte4", "moduleName": "@histoire/plugin-svelte", "setupFn": ["setupSvelte3", "setupSvelte4"] }, "commands": [{ "id": "histoire:plugin-svelte:generate-story", "label": "Generate Svelte 3 story from component", "icon": "https://svelte.dev/favicon.png", "searchText": "generate create", "clientSetupFile": "@histoire/plugin-svelte/dist/commands/generate-story.client.js" }] }], "outDir": "/Users/devspace/Developer/DevProjects/haut-test-meter/dist/histoire", "storyMatch": ["**/*.story.vue", "**/*.story.svelte"], "storyIgnored": ["**/node_modules/**", "**/dist/**"], "supportMatch": [{ "id": "vanilla", "patterns": ["**/*.js"], "pluginIds": ["vanilla"] }, { "id": "svelte", "patterns": ["**/*.svelte"], "pluginIds": ["svelte4"] }], "tree": { "file": "title", "order": "asc" }, "theme": { "title": "Histoire", "colors": { "primary": { "50": "#fff7ed", "100": "#ffedd5", "200": "#fed7aa", "300": "#fdba74", "400": "#fb923c", "500": "#f97316", "600": "#ea580c", "700": "#c2410c", "800": "#9a3412", "900": "#7c2d12" }, "gray": { "50": "#fafafa", "100": "#f4f4f5", "200": "#e4e4e7", "300": "#d4d4d8", "400": "#a1a1aa", "500": "#71717a", "600": "#52525b", "700": "#3f3f46", "750": "#323238", "800": "#27272a", "850": "#1f1f21", "900": "#18181b", "950": "#101012" } }, "defaultColorScheme": "auto", "storeColorScheme": true, "darkClass": "dark", "logo": { "square": "@histoire/plugin-svelte/assets/histoire-svelte.svg", "light": "@histoire/plugin-svelte/assets/histoire-svelte-text.svg", "dark": "@histoire/plugin-svelte/assets/histoire-svelte-text.svg" } }, "responsivePresets": [{ "label": "Mobile (Small)", "width": 320, "height": 560 }, { "label": "Mobile (Medium)", "width": 360, "height": 640 }, { "label": "Mobile (Large)", "width": 414, "height": 896 }, { "label": "Tablet", "width": 768, "height": 1024 }, { "label": "Laptop (Small)", "width": 1024, "height": null }, { "label": "Laptop (Large)", "width": 1366, "height": null }, { "label": "Desktop", "width": 1920, "height": null }, { "label": "4K", "width": 3840, "height": null }], "backgroundPresets": [{ "label": "Transparent", "color": "transparent", "contrastColor": "#333" }, { "label": "White", "color": "#fff", "contrastColor": "#333" }, { "label": "Light gray", "color": "#aaa", "contrastColor": "#000" }, { "label": "Dark gray", "color": "#333", "contrastColor": "#fff" }, { "label": "Black", "color": "#000", "contrastColor": "#eee" }], "sandboxDarkClass": "dark", "routerMode": "hash", "build": { "excludeFromVendorsChunk": [] }, "viteIgnorePlugins": ["vite-plugin-sveltekit-compile"] };
 const logos = { square: Logo_square, light: Logo_dark, dark: Logo_dark };
 const histoireConfig = config;
 const customLogos = logos;
@@ -1865,12 +1869,12 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: () => __vitePreload(() => import("./HomeView.vue-LOyozOFV.js"), true ? __vite__mapDeps([0,1,2]) : void 0)
+      component: () => __vitePreload(() => import("./HomeView.vue-oR_4yVDe.js"), true ? __vite__mapDeps([0,1,2]) : void 0)
     },
     {
       path: "/story/:storyId",
       name: "story",
-      component: () => __vitePreload(() => import("./StoryView.vue-oIs-Enmj.js"), true ? __vite__mapDeps([3,2,1,4,5,6]) : void 0)
+      component: () => __vitePreload(() => import("./StoryView.vue-_Jc9Yuq9.js"), true ? __vite__mapDeps([3,2,1,4,5,6]) : void 0)
     }
   ]
 });
@@ -2008,7 +2012,7 @@ export {
 };
 function __vite__mapDeps(indexes) {
   if (!__vite__mapDeps.viteFileDeps) {
-    __vite__mapDeps.viteFileDeps = ["assets/HomeView.vue-LOyozOFV.js","assets/story-HPQWOYG6.js","assets/vendor-adwhY5ma.js","assets/StoryView.vue-oIs-Enmj.js","assets/MobileOverlay.vue2-HEWuz7Vl.js","assets/BaseEmpty.vue-K1lN9d6v.js","assets/state-12gJl6kJ.js"]
+    __vite__mapDeps.viteFileDeps = ["assets/HomeView.vue-oR_4yVDe.js","assets/story-M84rFTKC.js","assets/vendor-adwhY5ma.js","assets/StoryView.vue-_Jc9Yuq9.js","assets/MobileOverlay.vue2-HEWuz7Vl.js","assets/BaseEmpty.vue-K1lN9d6v.js","assets/state-35EPAQRt.js"]
   }
   return indexes.map((i) => __vite__mapDeps.viteFileDeps[i])
 }
