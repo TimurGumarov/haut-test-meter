@@ -11,6 +11,10 @@
 
     // Calibration value. Declares the range for certain values.
     // To trigger state when the value will be within +/- cv of the value for a particular division.
+    // 0      0.17    0.33
+    // |       |       |
+    // | |   | | |   | | | ...
+    // |+cv -cv|+cv -cv|+cv
     let cv = (min != mid ? mid - min : max - mid) / 6
 
     let state: SegmentState = SegmentState.state1
