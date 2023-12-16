@@ -10,6 +10,8 @@ Preview link: [timurgumarov.github.io/haut-test-meter/](https://timurgumarov.git
 
 [Svelte](https://svelte.dev/) - a front-end, open-source JavaScript framework for making fast interactive webpages.
 
+[Histoire](https://histoire.dev) - a tool for creating application stories and describing functionality.
+
 ## Project structure
 
 ```
@@ -37,6 +39,33 @@ $PROJECT_ROOT
 # setup project
 npm install
 
-# serve with hot reload at localhost:3000
+# serve with hot reload at localhost:5173/haut-test-meter/
 npm run dev
+```
+
+## Scripts
+
+```bash
+# build the project
+npm run build
+
+# serve builded project from `dist/` folder
+# at localhost:4173/haut-test-meter/
+npm run preview
+
+# run types check
+npm run check
+
+# serve histoire with hot reload at localhost:6006/haut-test-meter/histoire/
+npm run story:dev
+
+# build histoire for the project
+npm run story:build
+
+# serve builded histoire project from `dist/` folder
+# at localhost:6006/haut-test-meter/histoire/
+npm run story:preview
+
+# helps me to deploy easily at Github pages
+npm run deploy
 ```
