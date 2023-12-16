@@ -56,7 +56,7 @@
     })
 </script>
 
-<div class="meter" bind:this={meter}>
+<div class="meter" bind:this={meter} data-testid="meter-container">
     <Icon name={'Moon'} active={iconMoonState} />
     <div class="bar">
         <Segment size={segmentSize} {min} max={segmentTick} mid={min} {value} />

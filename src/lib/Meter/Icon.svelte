@@ -9,7 +9,7 @@
     $: fill = active ? '#fff' : 'rgb(255 255 255 / 0.4)'
 </script>
 
-<div class="icon">
+<div class="icon" data-testid="icon-contaainer">
     {#if name === 'Moon'}
         <IconMoon {fill} />
     {:else if name === 'Sun'}
