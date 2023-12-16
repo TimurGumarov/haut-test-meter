@@ -33,7 +33,13 @@ $PROJECT_ROOT
 ## Setup
 
 1. Clone the project
-2. Make sure to install the dependencies:
+2. Make sure to install the dependencies
+
+> The project currently has some dependency issues.
+> Historie needs the oldest version of some libraries, but it works well
+> with the new ones. Therefore, you will need to install dependencies with
+> the flag `npm install --force` to ignore these errors.
+> This will need to be fixed in the future.
 
 ```bash
 # setup project
@@ -69,3 +75,9 @@ npm run story:preview
 # helps me to deploy easily at Github pages
 npm run deploy
 ```
+
+## P.S.
+
+I have tried running tests, but so far I have encountered difficulties installing and running libraries. So far, I have decided to submit the project without tests. If it turns out to install and run everything on the weekend, then I will finish the tests part.
+
+I also tried to run the build of Histoire pages on github pages at this link: [timurgumarov.github.io/haut-test-meter/historie/](https://timurgumarov.github.io/haut-test-meter/histoire/), but it failed. The variants pages show an error instead of rendering the page with the component. I will try to solve this problem in the near future.
