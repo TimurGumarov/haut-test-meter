@@ -5,19 +5,22 @@ export const config: Options.Testrunner = {
     // Runner Configuration
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
-    runner: ['browser', {
-        preset: 'svelte',
-        // start browser window when `DEBUG` environment variable is set
-        headless: !Boolean(process.env.DEBUG)
-    }],
+    runner: [
+        'browser',
+        {
+            preset: 'svelte',
+            // start browser window when `DEBUG` environment variable is set
+            headless: !Boolean(process.env.DEBUG),
+        },
+    ],
     autoCompileOpts: {
         autoCompile: true,
         tsNodeOpts: {
             project: './tsconfig.wdio.json',
-            transpileOnly: true
-        }
+            transpileOnly: true,
+        },
     },
-    
+
     //
     // ==================
     // Specify Test Files
@@ -30,13 +33,10 @@ export const config: Options.Testrunner = {
     // worker process. In order to have a group of spec files run in the same worker
     // process simply enclose them in an array within the specs array.
     //
-    // If you are calling `wdio` from an NPM script (see https://docs.npmjs.com/cli/run-script),
-    // then the current working directory is where your `package.json` resides, so `wdio`
-    // will be called from there.
+    // The path of the spec files will be resolved relative from the directory of
+    // of the config file unless it's absolute.
     //
-    specs: [
-        // ToDo: define location for spec files here
-    ],
+    specs: [['./src/**/*.spec.ts']],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -63,10 +63,12 @@ export const config: Options.Testrunner = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        // capabilities for local browser web tests
-        browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
-    }],
+    capabilities: [
+        {
+            // capabilities for local browser web tests
+            browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
+        },
+    ],
 
     //
     // ===================
@@ -115,8 +117,8 @@ export const config: Options.Testrunner = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['vite', 'eslinter'],
-
+    // services: [],
+    //
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks
@@ -124,7 +126,7 @@ export const config: Options.Testrunner = {
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
     framework: 'mocha',
-    
+
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
@@ -144,7 +146,7 @@ export const config: Options.Testrunner = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 60000,
     },
 
     //
@@ -244,7 +246,6 @@ export const config: Options.Testrunner = {
     // afterTest: function(test, context, { error, result, duration, passed, retries }) {
     // },
 
-
     /**
      * Hook that gets executed after the suite has ended
      * @param {object} suite suite details
@@ -288,22 +289,22 @@ export const config: Options.Testrunner = {
     // onComplete: function(exitCode, config, capabilities, results) {
     // },
     /**
-    * Gets executed when a refresh happens.
-    * @param {string} oldSessionId session ID of the old session
-    * @param {string} newSessionId session ID of the new session
-    */
+     * Gets executed when a refresh happens.
+     * @param {string} oldSessionId session ID of the old session
+     * @param {string} newSessionId session ID of the new session
+     */
     // onReload: function(oldSessionId, newSessionId) {
     // }
     /**
-    * Hook that gets executed before a WebdriverIO assertion happens.
-    * @param {object} params information about the assertion to be executed
-    */
+     * Hook that gets executed before a WebdriverIO assertion happens.
+     * @param {object} params information about the assertion to be executed
+     */
     // beforeAssertion: function(params) {
     // }
     /**
-    * Hook that gets executed after a WebdriverIO assertion happened.
-    * @param {object} params information about the assertion that was executed, including its results
-    */
+     * Hook that gets executed after a WebdriverIO assertion happened.
+     * @param {object} params information about the assertion that was executed, including its results
+     */
     // afterAssertion: function(params) {
     // }
 }
