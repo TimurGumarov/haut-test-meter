@@ -12,7 +12,7 @@
         "story:dev": "histoire dev",
         "story:build": "histoire build",
         "story:preview": "histoire preview",
-        "deploy": "npm run build && npm run story:build && cp .nojekyll dist && npx gh-pages -d dist"
+        "deploy": "npm run build && npm run story:build && npx gh-pages --nojekyll true -d dist"
     },
     "devDependencies": {
         "@histoire/plugin-svelte": "^0.17.6",
