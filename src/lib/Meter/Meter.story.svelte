@@ -7,8 +7,8 @@
 
     const source = `<Meter {min} {max} {optimum} {value} />`
 
-    const min: number = 0
-    const max: number = 1
+    let min: number = 0
+    let max: number = 1
     let optimum: number = 0.64
     let value = 0.5
 </script>
@@ -25,6 +25,8 @@
         </div>
     </Hst.Variant>
     <svelte:fragment slot="controls">
+        <Hst.Number bind:value={min} title="min" />
+        <Hst.Number bind:value={max} title="max" />
         <Hst.Slider
             bind:value={optimum}
             {min}
