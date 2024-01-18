@@ -39,7 +39,7 @@
         height: 24px;
         margin: 0;
         background: var(--background);
-        opacity: 0.6;
+        opacity: 0.4;
         border-radius: var(--border-radius);
         -webkit-animation: segmentAnimation 1s both ease-in;
         animation: segmentAnimation 1s both ease-in;
@@ -59,7 +59,7 @@
         0% {
             width: 8px;
             height: 24px;
-            opacity: 0.6;
+            opacity: 0.4;
             box-shadow:
                 0 0 0 -2px #ffffff00,
                 0 0 0 -1px #ffffff00;
