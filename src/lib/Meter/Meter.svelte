@@ -28,7 +28,7 @@
 
 <div class="meter" data-testid="meter-container">
     <Icon name={'Moon'} active={iconMoonState} />
-    <div class="bar">
+    <div class="bar" data-testid="bar-container">
         <Segment segmentValue={min} bind:globalValue={value} {animationRange} />
         <Segment
             segmentValue={min + segmentTick}

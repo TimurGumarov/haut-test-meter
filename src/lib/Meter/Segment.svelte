@@ -26,7 +26,7 @@
     }
 </script>
 
-<div class="segment" bind:this={Segment}></div>
+<div class="segment" bind:this={Segment} data-testid="segment"></div>
 
 <style>
     .segment {
