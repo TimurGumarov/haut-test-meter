@@ -12737,6 +12737,10 @@ function compute_slots(slots) {
   }
   return result;
 }
+const globals = typeof window !== "undefined" ? window : typeof globalThis !== "undefined" ? globalThis : (
+  // @ts-ignore Node typings have this
+  global
+);
 function append(target, node) {
   target.appendChild(node);
 }
@@ -13148,14 +13152,6 @@ function attr_dev(node, attribute, value) {
     dispatch_dev("SvelteDOMRemoveAttribute", { node, attribute });
   else
     dispatch_dev("SvelteDOMSetAttribute", { node, attribute, value });
-}
-function set_data_dev(text2, data) {
-  data = "" + data;
-  if (text2.data === data)
-    return;
-  dispatch_dev("SvelteDOMSetData", { node: text2, data });
-  text2.data = /** @type {string} */
-  data;
 }
 function validate_slots(name, slot, keys) {
   for (const slot_key of Object.keys(slot)) {
@@ -40733,55 +40729,53 @@ export {
   create_component as a5,
   mount_component as a6,
   destroy_component as a7,
-  onMount as a8,
+  globals as a8,
   binding_callbacks as a9,
-  VTooltip as aA,
-  createStaticVNode as aB,
-  toRaw as aC,
-  Dropdown as aD,
-  useTimeoutFn as aE,
-  onClickOutside as aF,
-  nextTick as aG,
-  Mm as aH,
-  gm as aI,
-  ym as aJ,
-  wm as aK,
-  shallowRef as aL,
-  getHighlighter as aM,
-  onBeforeUnmount as aN,
-  scrollIntoView as aO,
-  useMediaQuery as aP,
-  useFocus as aQ,
-  refDebounced as aR,
-  flexsearch_bundleExports as aS,
-  client as aT,
-  index as aU,
-  text as aa,
-  set_data_dev as ab,
-  space as ac,
-  bind as ad,
-  add_flush_callback as ae,
-  Logo_square as af,
-  Logo_dark as ag,
-  createRouter as ah,
-  createWebHistory as ai,
-  createWebHashHistory as aj,
-  useDark as ak,
-  useToggle as al,
-  markRaw as am,
-  watchEffect as an,
-  mergeProps as ao,
-  resolveDynamicComponent as ap,
-  toRefs as aq,
-  useTransition as ar,
-  syncRefs as as,
-  useRouter as at,
-  useResizeObserver as au,
-  Am as av,
-  withModifiers as aw,
-  renderSlot as ax,
-  vModelText as ay,
-  onUnmounted as az,
+  toRaw as aA,
+  Dropdown as aB,
+  useTimeoutFn as aC,
+  onClickOutside as aD,
+  nextTick as aE,
+  Mm as aF,
+  gm as aG,
+  ym as aH,
+  wm as aI,
+  shallowRef as aJ,
+  getHighlighter as aK,
+  onBeforeUnmount as aL,
+  scrollIntoView as aM,
+  useMediaQuery as aN,
+  useFocus as aO,
+  refDebounced as aP,
+  flexsearch_bundleExports as aQ,
+  client as aR,
+  index as aS,
+  bind as aa,
+  space as ab,
+  add_flush_callback as ac,
+  Logo_square as ad,
+  Logo_dark as ae,
+  createRouter as af,
+  createWebHistory as ag,
+  createWebHashHistory as ah,
+  useDark as ai,
+  useToggle as aj,
+  markRaw as ak,
+  watchEffect as al,
+  mergeProps as am,
+  resolveDynamicComponent as an,
+  toRefs as ao,
+  useTransition as ap,
+  syncRefs as aq,
+  useRouter as ar,
+  useResizeObserver as as,
+  Am as at,
+  withModifiers as au,
+  renderSlot as av,
+  vModelText as aw,
+  onUnmounted as ax,
+  VTooltip as ay,
+  createStaticVNode as az,
   createElementBlock as b,
   computed as c,
   defineComponent as d,
