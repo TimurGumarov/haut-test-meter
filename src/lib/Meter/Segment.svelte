@@ -1,106 +1,110 @@
 <script lang="ts">
-    import { SegmentState, type SegmentSize } from './segment.types'
+    export let segmentValue: number = 0
+    export let globalValue: number = 0
+    export let animationRange: number = 0
 
-    export let size: SegmentSize = 'big'
-    // The segment changes its state between min and max value
-    export let min: number = 0
-    export let max: number = 1
-    // Where mid value is for its medium state (SegmentState.state4)
-    export let mid: number = 0.5
-    export let value: number = 0
+    let Segment: HTMLDivElement
 
-    // Calibration value. Declares the range for certain values.
-    // To trigger state when the value will be within +/- cv of the value for a particular division.
-    // 0      0.17    0.33
-    // |       |       |
-    // | |   | | |   | | | ...
-    // |+cv -cv|+cv -cv|+cv
-    let cv = (min != mid ? mid - min : max - mid) / 6
+    function controlSegmentAnimation(value: number): number {
+        let delay: number = 0
+        console.log({ segmentValue, globalValue, animationRange })
+        if (globalValue > segmentValue + animationRange) delay = 1
+        if (
+            globalValue >= segmentValue - animationRange &&
+            globalValue <= segmentValue + animationRange
+        ) {
+            let increment =
+                (value - (segmentValue - animationRange)) / (2 * animationRange)
+            delay = increment
+        }
+        return -delay
+    }
 
-    let state: SegmentState = SegmentState.state1
-
-    // Segment state control logic
-    $: if (value < min - cv) state = SegmentState.state1
-    $: if (value >= min - cv && value <= min + cv) state = SegmentState.state2
-    $: if (value > min + cv && value < mid - cv) state = SegmentState.state3
-    $: if (value >= mid - cv && value <= mid + cv) state = SegmentState.state4
-    $: if (value > mid + cv && value < max - cv) state = SegmentState.state5
-    $: if (max != mid && value >= max - cv && value <= max + cv)
-        state = SegmentState.state6
-    $: if (value > max + cv) state = SegmentState.state7
+    $: if (Segment && globalValue) {
+        Segment.style.animationDelay = `${controlSegmentAnimation(
+            globalValue
+        )}s`
+    }
 </script>
 
-<div class="segment {size} {SegmentState[state]}"></div>
+<div class="segment" bind:this={Segment}></div>
 
 <style>
     .segment {
         --transition-speed: 0.2s;
-        --base-width: 8px;
-        --base-height: 24px;
-        --width: var(--base-width);
-        --height: var(--base-height);
         --border-radius: 3px;
-        --background: rgb(255 255 255 / 0.6);
-        --increment1: 4px;
-        --increment2: 7px;
-        display: block;
-        width: var(--width);
-        height: var(--height);
-        background: var(--background);
-        border-radius: var(--border-radius);
-        box-shadow:
-            0 0 0 -2px #ffffff00,
-            0 0 0 -1px #ffffff00;
-        transform: scaleX(1);
-        transition:
-            transform var(--transition-speed) ease,
-            height var(--transition-speed) ease,
-            background var(--transition-speed) ease,
-            box-shadow var(--transition-speed) ease;
-    }
-    .segment.big {
-        --base-width: 8px;
-        --base-height: 24px;
-        --border-radius: 3px;
-        --increment1: 4px;
-        --increment2: 7px;
-    }
-    .segment.small {
-        --base-width: 6px;
-        --base-height: 20px;
-        --border-radius: 2px;
-        --increment1: 4px;
-        --increment2: 6px;
-    }
-    .segment.state1,
-    .segment.state7 {
-        --height: var(--base-height);
-    }
-    .segment.state2,
-    .segment.state6 {
-        --height: calc(var(--base-height) + var(--increment1));
-    }
-    .segment.state3,
-    .segment.state5 {
-        --height: calc(
-            var(--base-height) + var(--increment1) + var(--increment2)
-        );
-    }
-    .segment.state4 {
-        --height: calc(
-            var(--base-height) + var(--increment1) + var(--increment2) * 2
-        );
-    }
-    .segment.big.state4 {
-        transform: scaleX(1.25);
-    }
-    .segment.state4,
-    .segment.state5,
-    .segment.state6,
-    .segment.state7 {
         --background: #fff;
-        box-shadow:
-            0 0 24px -2px #fff,
-            0 0 6px -1px #fff;
+        display: block;
+        width: 8px;
+        height: 24px;
+        margin: 0;
+        background: var(--background);
+        opacity: 0.6;
+        border-radius: var(--border-radius);
+        -webkit-animation: segmentAnimation 1s both ease-in;
+        animation: segmentAnimation 1s both ease-in;
+        animation-play-state: paused;
+    }
+    @container (width < 320px) {
+        .segment {
+            --min-height: 20px;
+            --max-height: 36px;
+            --border-radius: 2px;
+            width: 6px;
+            -webkit-animation-name: segmentAnimationSmall;
+            animation-name: segmentAnimationSmall;
+        }
+    }
+    @keyframes segmentAnimation {
+        0% {
+            width: 8px;
+            height: 24px;
+            opacity: 0.6;
+            box-shadow:
+                0 0 0 -2px #ffffff00,
+                0 0 0 -1px #ffffff00;
+        }
+        45% {
+            opacity: 0.8;
+            box-shadow:
+                0 0 4px -2px #ffffff00,
+                0 0 2px -1px #ffffff00;
+        }
+        50% {
+            width: 10px;
+            height: 42px;
+            opacity: 1;
+            box-shadow:
+                0 0 24px -2px #fff,
+                0 0 6px -1px #fff;
+        }
+        100% {
+            width: 8px;
+            height: 24px;
+            opacity: 1;
+            box-shadow:
+                0 0 24px -2px #fff,
+                0 0 6px -1px #fff;
+        }
+    }
+    @keyframes segmentAnimationSmall {
+        0% {
+            height: 20px;
+            --background: rgb(255 255 255 / 0.6);
+        }
+        50% {
+            height: 36px;
+            --background: #fff;
+            box-shadow:
+                0 0 24px -2px #fff,
+                0 0 6px -1px #fff;
+        }
+        100% {
+            height: 20px;
+            --background: #fff;
+            box-shadow:
+                0 0 24px -2px #fff,
+                0 0 6px -1px #fff;
+        }
     }
 </style>
