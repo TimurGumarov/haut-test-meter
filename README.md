@@ -2,6 +2,8 @@
 
 Preview link: [timurgumarov.github.io/haut-test-meter/](https://timurgumarov.github.io/haut-test-meter/)
 
+Histoire: [timurgumarov.github.io/haut-test-meter/histoire/](https://timurgumarov.github.io/haut-test-meter/histoire/)
+
 ## Recommended IDE Setup
 
 [VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
