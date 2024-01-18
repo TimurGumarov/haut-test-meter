@@ -7,7 +7,6 @@
 
     function controlSegmentAnimation(value: number): number {
         let delay: number = 0
-        console.log({ segmentValue, globalValue, animationRange })
         if (globalValue > segmentValue + animationRange) delay = 1
         if (
             globalValue >= segmentValue - animationRange &&
