@@ -36,7 +36,14 @@
         <slot />
     </div>
     <p>Value: {$value}</p>
-    <p>(min: {$min}, max: {$max}, optimum: {$optimum})</p>
+    <div class="row">
+        <p>min:</p>
+        <input type="number" step="0.1" bind:value={$min} />
+        <p>max:</p>
+        <input type="number" step="0.1" bind:value={$max} />
+        <p>optimum:</p>
+        <input type="number" step="0.1" bind:value={$optimum} />
+    </div>
     <input
         type="range"
         min={$min}
@@ -63,7 +70,7 @@
     .container {
         display: flex;
         flex-flow: column;
-        padding: 33px;
+        padding: 33px 0;
         resize: horizontal;
         min-width: 300px;
         max-width: 500px;
@@ -71,6 +78,15 @@
         border-radius: 10px;
         overflow: auto;
         box-sizing: border-box;
+    }
+    .row {
+        display: flex;
+        flex-flow: row;
+        gap: 10px;
+    }
+    .row input {
+        width: 45px;
+        margin-right: 10px;
     }
     input[type='range'] {
         width: 200px;
