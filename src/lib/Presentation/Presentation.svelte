@@ -52,6 +52,12 @@
         on:input={changeValueInStore}
         step="0.01"
     />
+
+    <p>
+        You can also see the implementation of the component at the <a
+            href="/haut-test-meter/histoire/">Histoire</a
+        > page.
+    </p>
 </div>
 
 <style>
@@ -66,6 +72,10 @@
         font-family: sans-serif;
         color: rgb(193, 193, 193);
         font-weight: 500;
+    }
+    a,
+    a:visited {
+        color: aqua;
     }
     .container {
         display: flex;
