@@ -44,7 +44,7 @@
         animation: segmentAnimation 1s both ease-in;
         animation-play-state: paused;
     }
-    @container (width < 320px) {
+    @container (width <= 320px) {
         .segment {
             --min-height: 20px;
             --max-height: 36px;

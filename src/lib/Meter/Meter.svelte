@@ -72,7 +72,6 @@
         align-items: center;
         justify-content: center;
         gap: 28px;
-        padding: 8px;
     }
     .bar {
         display: grid;
@@ -81,7 +80,7 @@
         min-height: 42px;
         gap: 10px;
     }
-    @container (width < 320px) {
+    @container (width <= 320px) {
         .bar {
             min-height: 36px;
             grid-template-columns: repeat(7, 6px);
