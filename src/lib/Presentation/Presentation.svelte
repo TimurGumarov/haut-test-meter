@@ -24,7 +24,7 @@
 </script>
 
 <div class="wrap">
-    <p>Width: {container && container.offsetWidth}px</p>
+    <p>Width: {container && container.offsetWidth - 4}px</p>
     <p>You can change the width by dragging the bottom right corner.</p>
     <div
         class="container"
@@ -87,7 +87,6 @@
         border: 2px dashed #1e1e1e;
         border-radius: 10px;
         overflow: auto;
-        box-sizing: border-box;
     }
     .row {
         display: flex;
