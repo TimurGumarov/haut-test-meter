@@ -77,6 +77,9 @@
                 0 0 24px -2px #fff,
                 0 0 6px -1px #fff;
         }
+        75% {
+            height: 29px;
+        }
         100% {
             width: 8px;
             height: 24px;
