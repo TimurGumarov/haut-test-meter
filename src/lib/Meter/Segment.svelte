@@ -89,18 +89,24 @@
     @keyframes segmentAnimationSmall {
         0% {
             height: 20px;
-            --background: rgb(255 255 255 / 0.6);
+            opacity: 0.4;
+        }
+        45% {
+            opacity: 0.8;
+            box-shadow:
+                0 0 4px -2px #ffffff00,
+                0 0 2px -1px #ffffff00;
         }
         50% {
             height: 36px;
-            --background: #fff;
+            opacity: 1;
             box-shadow:
                 0 0 24px -2px #fff,
                 0 0 6px -1px #fff;
         }
         100% {
             height: 20px;
-            --background: #fff;
+            opacity: 1;
             box-shadow:
                 0 0 24px -2px #fff,
                 0 0 6px -1px #fff;

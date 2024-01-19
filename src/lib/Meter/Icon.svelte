@@ -9,7 +9,7 @@
     $: fill = active ? '#fff' : 'rgb(255 255 255 / 0.4)'
 </script>
 
-<div class="icon" data-testid="icon-container">
+<div class="icon-container" class:active data-testid="icon-container">
     {#if name === 'Moon'}
         <IconMoon {fill} />
     {:else if name === 'Sun'}
@@ -18,7 +18,7 @@
 </div>
 
 <style>
-    .icon {
+    .icon-container {
         display: flex;
         flex-flow: column;
         align-items: center;
