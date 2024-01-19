@@ -8,7 +8,7 @@
     export let value: number = 0
 
     let animationRange: number
-    $: animationRange = (max - min) / 5
+    $: animationRange = (max - min) / 3.6
 
     // Value difference between divisions
     let segmentTick: number
