@@ -4,15 +4,27 @@ Preview link: [timurgumarov.github.io/haut-test-meter/](https://timurgumarov.git
 
 Histoire: [timurgumarov.github.io/haut-test-meter/histoire/](https://timurgumarov.github.io/haut-test-meter/histoire/)
 
-## Recommended IDE Setup
+## Recent updates
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+-   added WebdriverIO and specs for components
+-   made some refactoring
+-   removed error-handling and values restrictions
+-   updated functionality with smooth animation
+-   added inputs for `min` and `max` values to Histoire and Presentation
+-   added `.nojekyll` to remove Histoire errors on GitHub pages
+-   fixed `npm install` dependency resolving problem
+
+## Recommended environment Setup
+
+[VS Code](https://code.visualstudio.com/) + [NodeJS](https://nodejs.org/).
 
 ## Stack
 
 [Svelte](https://svelte.dev/) - a front-end, open-source JavaScript framework for making fast interactive webpages.
 
 [Histoire](https://histoire.dev) - a tool for creating application stories and describing functionality.
+
+[WebdriverIO](https://webdriver.io/) - a progressive automation framework built to automate modern web and mobile applications.
 
 ## Project structure
 
@@ -37,12 +49,6 @@ $PROJECT_ROOT
 1. Clone the project
 2. Make sure to install the dependencies
 
-> The project currently has some dependency issues.
-> Historie needs the oldest version of some libraries, but it works well
-> with the new ones. Therefore, you will need to install dependencies with
-> the flag `npm install --force` to ignore these errors.
-> This will need to be fixed in the future.
-
 ```bash
 # setup project
 npm install
@@ -64,6 +70,9 @@ npm run preview
 # run types check
 npm run check
 
+# run tests
+npm run wdio
+
 # serve histoire with hot reload at localhost:6006/haut-test-meter/histoire/
 npm run story:dev
 
@@ -77,9 +86,3 @@ npm run story:preview
 # helps me to deploy easily at Github pages
 npm run deploy
 ```
-
-## P.S.
-
-I have tried running tests, but so far I have encountered difficulties installing and running libraries. So far, I have decided to submit the project without tests. If it turns out to install and run everything on the weekend, then I will finish the tests part.
-
-I also tried to run the build of Histoire pages on github pages at this link: [timurgumarov.github.io/haut-test-meter/historie/](https://timurgumarov.github.io/haut-test-meter/histoire/), but it failed. The variants pages show an error instead of rendering the page with the component. I will try to solve this problem in the near future.
