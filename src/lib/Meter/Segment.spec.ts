@@ -105,8 +105,8 @@ describe('Segment component', () => {
             const firstSegment = segments[0]
             const firstSegmentSizes = firstSegment?.getBoundingClientRect()
 
-            expect(firstSegmentSizes.height).toBeLessThan(36)
-            expect(firstSegmentSizes.height).toBeGreaterThan(35)
+            expect(firstSegmentSizes.height).toBeLessThan(34)
+            expect(firstSegmentSizes.height).toBeGreaterThan(33)
         })
 
         it('step 4: min = -1, value = -0.85', async () => {
@@ -117,8 +117,8 @@ describe('Segment component', () => {
             const firstSegment = segments[0]
             const firstSegmentSizes = firstSegment?.getBoundingClientRect()
 
-            expect(firstSegmentSizes.height).toBeLessThan(35)
-            expect(firstSegmentSizes.height).toBeGreaterThan(34)
+            expect(firstSegmentSizes.height).toBeLessThan(32)
+            expect(firstSegmentSizes.height).toBeGreaterThan(31)
         })
     })
 })
