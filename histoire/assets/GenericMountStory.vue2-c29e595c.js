@@ -998,10 +998,10 @@ function create_fragment$1(ctx) {
       create_component(icon1.$$.fragment);
       attr_dev(div0, "class", "bar s-flum80glNey2");
       attr_dev(div0, "data-testid", "bar-container");
-      add_location(div0, file$1, 30, 4, 720);
+      add_location(div0, file$1, 30, 4, 722);
       attr_dev(div1, "class", "meter s-flum80glNey2");
       attr_dev(div1, "data-testid", "meter-container");
-      add_location(div1, file$1, 28, 0, 616);
+      add_location(div1, file$1, 28, 0, 618);
     },
     l: function claim(nodes) {
       throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1307,7 +1307,7 @@ function instance$1($$self, $$props, $$invalidate) {
   $$self.$$.update = () => {
     if ($$self.$$.dirty & /*max, min*/
     66) {
-      $$invalidate(4, animationRange = (max - min) / 5);
+      $$invalidate(4, animationRange = (max - min) / 3.6);
     }
     if ($$self.$$.dirty & /*max, min*/
     66) {
@@ -2007,12 +2007,12 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: () => __vitePreload(() => import("./HomeView.vue-f83a15e6.js"), true ? ["assets/HomeView.vue-f83a15e6.js","assets/story-f86d5cdb.js","assets/vendor-579370cf.js"] : void 0)
+      component: () => __vitePreload(() => import("./HomeView.vue-cb02ecd2.js"), true ? ["assets/HomeView.vue-cb02ecd2.js","assets/story-ef925b91.js","assets/vendor-579370cf.js"] : void 0)
     },
     {
       path: "/story/:storyId",
       name: "story",
-      component: () => __vitePreload(() => import("./StoryView.vue-b23a45e2.js"), true ? ["assets/StoryView.vue-b23a45e2.js","assets/vendor-579370cf.js","assets/story-f86d5cdb.js","assets/MobileOverlay.vue2-cababdd1.js","assets/BaseEmpty.vue-e5585e52.js","assets/state-0b051678.js"] : void 0)
+      component: () => __vitePreload(() => import("./StoryView.vue-e986f69e.js"), true ? ["assets/StoryView.vue-e986f69e.js","assets/vendor-579370cf.js","assets/story-ef925b91.js","assets/MobileOverlay.vue2-cababdd1.js","assets/BaseEmpty.vue-e5585e52.js","assets/state-9df74653.js"] : void 0)
     }
   ]
 });
