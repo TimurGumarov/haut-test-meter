@@ -1,48 +1,47 @@
-import { S as SvelteComponentDev, P as init, Q as safe_not_equal, R as dispatch_dev, U as validate_slots, V as svg_element, W as attr_dev, X as add_location, Y as insert_dev, Z as append_dev, _ as noop, $ as detach_dev, a0 as element, a1 as group_outros, a2 as transition_out, a3 as check_outros, a4 as transition_in, a5 as create_component, a6 as mount_component, a7 as destroy_component, a8 as globals, a9 as binding_callbacks, aa as bind, ab as space, ac as add_flush_callback, ad as Logo_square, ae as Logo_dark, af as createRouter, ag as createWebHistory, ah as createWebHashHistory, ai as useDark, aj as useToggle, k as watch, ak as markRaw, E as reactive, d as defineComponent, r as ref, al as watchEffect, o as openBlock, q as createBlock, am as mergeProps, an as resolveDynamicComponent, h as createCommentVNode } from "./vendor--K4wnKbb.js";
+import { S as SvelteComponentDev, Q as init, R as safe_not_equal, U as dispatch_dev, V as validate_slots, W as svg_element, X as attr_dev, Y as add_location, Z as insert_dev, _ as append_dev, $ as noop, a0 as detach_dev, a1 as element, a2 as toggle_class, a3 as group_outros, a4 as transition_out, a5 as check_outros, a6 as transition_in, a7 as create_component, a8 as mount_component, a9 as destroy_component, aa as binding_callbacks, ab as bind, ac as space, ad as add_flush_callback, ae as Logo_square, af as Logo_dark, ag as createRouter, ah as createWebHistory, ai as createWebHashHistory, aj as useDark, ak as useToggle, k as watch, al as markRaw, E as reactive, d as defineComponent, r as ref, am as watchEffect, o as openBlock, q as createBlock, an as mergeProps, ao as resolveDynamicComponent, h as createCommentVNode } from "./vendor-579370cf.js";
 const scriptRel = "modulepreload";
 const assetsURL = function(dep) {
   return "/haut-test-meter/histoire/" + dep;
 };
 const seen = {};
 const __vitePreload = function preload(baseModule, deps, importerUrl) {
-  let promise = Promise.resolve();
-  if (deps && deps.length > 0) {
-    const links = document.getElementsByTagName("link");
-    promise = Promise.all(deps.map((dep) => {
-      dep = assetsURL(dep);
-      if (dep in seen)
-        return;
-      seen[dep] = true;
-      const isCss = dep.endsWith(".css");
-      const cssSelector = isCss ? '[rel="stylesheet"]' : "";
-      const isBaseRelative = !!importerUrl;
-      if (isBaseRelative) {
-        for (let i = links.length - 1; i >= 0; i--) {
-          const link2 = links[i];
-          if (link2.href === dep && (!isCss || link2.rel === "stylesheet")) {
-            return;
-          }
-        }
-      } else if (document.querySelector(`link[href="${dep}"]${cssSelector}`)) {
-        return;
-      }
-      const link = document.createElement("link");
-      link.rel = isCss ? "stylesheet" : scriptRel;
-      if (!isCss) {
-        link.as = "script";
-        link.crossOrigin = "";
-      }
-      link.href = dep;
-      document.head.appendChild(link);
-      if (isCss) {
-        return new Promise((res, rej) => {
-          link.addEventListener("load", res);
-          link.addEventListener("error", () => rej(new Error(`Unable to preload CSS for ${dep}`)));
-        });
-      }
-    }));
+  if (!deps || deps.length === 0) {
+    return baseModule();
   }
-  return promise.then(() => baseModule()).catch((err) => {
+  const links = document.getElementsByTagName("link");
+  return Promise.all(deps.map((dep) => {
+    dep = assetsURL(dep);
+    if (dep in seen)
+      return;
+    seen[dep] = true;
+    const isCss = dep.endsWith(".css");
+    const cssSelector = isCss ? '[rel="stylesheet"]' : "";
+    const isBaseRelative = !!importerUrl;
+    if (isBaseRelative) {
+      for (let i = links.length - 1; i >= 0; i--) {
+        const link2 = links[i];
+        if (link2.href === dep && (!isCss || link2.rel === "stylesheet")) {
+          return;
+        }
+      }
+    } else if (document.querySelector(`link[href="${dep}"]${cssSelector}`)) {
+      return;
+    }
+    const link = document.createElement("link");
+    link.rel = isCss ? "stylesheet" : scriptRel;
+    if (!isCss) {
+      link.as = "script";
+      link.crossOrigin = "";
+    }
+    link.href = dep;
+    document.head.appendChild(link);
+    if (isCss) {
+      return new Promise((res, rej) => {
+        link.addEventListener("load", res);
+        link.addEventListener("error", () => rej(new Error(`Unable to preload CSS for ${dep}`)));
+      });
+    }
+  })).then(() => baseModule()).catch((err) => {
     const e = new Event("vite:preloadError", { cancelable: true });
     e.payload = err;
     window.dispatchEvent(e);
@@ -51,6 +50,7 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
     }
   });
 };
+const IconMoon_svelte_svelte_type_style_lang = "";
 const file$5 = "src/lib/Meter/IconMoon.svelte";
 function create_fragment$5(ctx) {
   let svg;
@@ -81,7 +81,7 @@ function create_fragment$5(ctx) {
         ctx[2]
       );
       attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-      attr_dev(svg, "data-testid", "moon-icon");
+      attr_dev(svg, "data-testid", "icon-moon");
       attr_dev(svg, "class", "s-Gz6xCtVjorkG");
       add_location(svg, file$5, 6, 0, 102);
     },
@@ -201,6 +201,7 @@ class IconMoon extends SvelteComponentDev {
     throw new Error("<IconMoon>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
   }
 }
+const IconSun_svelte_svelte_type_style_lang = "";
 const file$4 = "src/lib/Meter/IconSun.svelte";
 function create_fragment$4(ctx) {
   let svg;
@@ -231,7 +232,7 @@ function create_fragment$4(ctx) {
         ctx[2]
       );
       attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-      attr_dev(svg, "data-testid", "sun-icon");
+      attr_dev(svg, "data-testid", "icon-sun");
       attr_dev(svg, "class", "s-gewHTvhp1HWm");
       add_location(svg, file$4, 6, 0, 102);
     },
@@ -351,6 +352,7 @@ class IconSun extends SvelteComponentDev {
     throw new Error("<IconSun>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
   }
 }
+const Icon_svelte_svelte_type_style_lang = "";
 const file$3 = "src/lib/Meter/Icon.svelte";
 function create_if_block_1(ctx) {
   let iconsun;
@@ -358,7 +360,7 @@ function create_if_block_1(ctx) {
   iconsun = new IconSun({
     props: { fill: (
       /*fill*/
-      ctx[1]
+      ctx[2]
     ) },
     $$inline: true
   });
@@ -373,9 +375,9 @@ function create_if_block_1(ctx) {
     p: function update(ctx2, dirty) {
       const iconsun_changes = {};
       if (dirty & /*fill*/
-      2)
+      4)
         iconsun_changes.fill = /*fill*/
-        ctx2[1];
+        ctx2[2];
       iconsun.$set(iconsun_changes);
     },
     i: function intro(local) {
@@ -407,7 +409,7 @@ function create_if_block(ctx) {
   iconmoon = new IconMoon({
     props: { fill: (
       /*fill*/
-      ctx[1]
+      ctx[2]
     ) },
     $$inline: true
   });
@@ -422,9 +424,9 @@ function create_if_block(ctx) {
     p: function update(ctx2, dirty) {
       const iconmoon_changes = {};
       if (dirty & /*fill*/
-      2)
+      4)
         iconmoon_changes.fill = /*fill*/
-        ctx2[1];
+        ctx2[2];
       iconmoon.$set(iconmoon_changes);
     },
     i: function intro(local) {
@@ -478,8 +480,14 @@ function create_fragment$3(ctx) {
       div = element("div");
       if (if_block)
         if_block.c();
-      attr_dev(div, "class", "icon s-bgAsj7upK8sS");
-      attr_dev(div, "data-testid", "icon-contaainer");
+      attr_dev(div, "class", "icon-container s-bgAsj7upK8sS");
+      attr_dev(div, "data-testid", "icon-container");
+      toggle_class(
+        div,
+        "active",
+        /*active*/
+        ctx[1]
+      );
       add_location(div, file$3, 11, 0, 260);
     },
     l: function claim(nodes) {
@@ -520,6 +528,15 @@ function create_fragment$3(ctx) {
         } else {
           if_block = null;
         }
+      }
+      if (!current || dirty & /*active*/
+      2) {
+        toggle_class(
+          div,
+          "active",
+          /*active*/
+          ctx2[1]
+        );
       }
     },
     i: function intro(local) {
@@ -565,32 +582,32 @@ function instance$3($$self, $$props, $$invalidate) {
     if ("name" in $$props2)
       $$invalidate(0, name = $$props2.name);
     if ("active" in $$props2)
-      $$invalidate(2, active = $$props2.active);
+      $$invalidate(1, active = $$props2.active);
   };
   $$self.$capture_state = () => ({ IconMoon, IconSun, name, active, fill });
   $$self.$inject_state = ($$props2) => {
     if ("name" in $$props2)
       $$invalidate(0, name = $$props2.name);
     if ("active" in $$props2)
-      $$invalidate(2, active = $$props2.active);
+      $$invalidate(1, active = $$props2.active);
     if ("fill" in $$props2)
-      $$invalidate(1, fill = $$props2.fill);
+      $$invalidate(2, fill = $$props2.fill);
   };
   if ($$props && "$$inject" in $$props) {
     $$self.$inject_state($$props.$$inject);
   }
   $$self.$$.update = () => {
     if ($$self.$$.dirty & /*active*/
-    4) {
-      $$invalidate(1, fill = active ? "#fff" : "rgb(255 255 255 / 0.4)");
+    2) {
+      $$invalidate(2, fill = active ? "#fff" : "rgb(255 255 255 / 0.4)");
     }
   };
-  return [name, fill, active];
+  return [name, active, fill];
 }
 class Icon extends SvelteComponentDev {
   constructor(options) {
     super(options);
-    init(this, options, instance$3, create_fragment$3, safe_not_equal, { name: 0, active: 2 });
+    init(this, options, instance$3, create_fragment$3, safe_not_equal, { name: 0, active: 1 });
     dispatch_dev("SvelteRegisterComponent", {
       component: this,
       tagName: "Icon",
@@ -611,7 +628,7 @@ class Icon extends SvelteComponentDev {
     throw new Error("<Icon>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
   }
 }
-const { console: console_1 } = globals;
+const Segment_svelte_svelte_type_style_lang = "";
 const file$2 = "src/lib/Meter/Segment.svelte";
 function create_fragment$2(ctx) {
   let div;
@@ -619,7 +636,8 @@ function create_fragment$2(ctx) {
     c: function create() {
       div = element("div");
       attr_dev(div, "class", "segment s-cJFA6yj_wNDT");
-      add_location(div, file$2, 29, 0, 681);
+      attr_dev(div, "data-testid", "segment");
+      add_location(div, file$2, 28, 0, 619);
     },
     l: function claim(nodes) {
       throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -656,11 +674,6 @@ function instance$2($$self, $$props, $$invalidate) {
   let Segment;
   function controlSegmentAnimation(value) {
     let delay = 0;
-    console.log({
-      segmentValue,
-      globalValue,
-      animationRange
-    });
     if (globalValue > segmentValue + animationRange)
       delay = 1;
     if (globalValue >= segmentValue - animationRange && globalValue <= segmentValue + animationRange) {
@@ -672,7 +685,7 @@ function instance$2($$self, $$props, $$invalidate) {
   const writable_props = ["segmentValue", "globalValue", "animationRange"];
   Object.keys($$props).forEach((key) => {
     if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$" && key !== "slot")
-      console_1.warn(`<Segment> was created with unknown prop '${key}'`);
+      console.warn(`<Segment> was created with unknown prop '${key}'`);
   });
   function div_binding($$value) {
     binding_callbacks[$$value ? "unshift" : "push"](() => {
@@ -752,6 +765,7 @@ class Segment_1 extends SvelteComponentDev {
     throw new Error("<Segment>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
   }
 }
+const Meter_svelte_svelte_type_style_lang = "";
 const file$1 = "src/lib/Meter/Meter.svelte";
 function create_fragment$1(ctx) {
   let div1;
@@ -983,6 +997,7 @@ function create_fragment$1(ctx) {
       t7 = space();
       create_component(icon1.$$.fragment);
       attr_dev(div0, "class", "bar s-flum80glNey2");
+      attr_dev(div0, "data-testid", "bar-container");
       add_location(div0, file$1, 30, 4, 720);
       attr_dev(div1, "class", "meter s-flum80glNey2");
       attr_dev(div1, "data-testid", "meter-container");
@@ -1363,6 +1378,7 @@ class Meter extends SvelteComponentDev {
     throw new Error("<Meter>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
   }
 }
+const Meter_story_svelte_svelte_type_style_lang = "";
 const file = "src/lib/Meter/Meter.story.svelte";
 function create_default_slot_2(ctx) {
   let div;
@@ -1969,7 +1985,7 @@ class Meter_story extends SvelteComponentDev {
     throw new Error("<Meter_story>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
   }
 }
-let files = [{ "id": "src-lib-meter-meter-story-svelte", "path": ["Meter component"], "filePath": "src/lib/Meter/Meter.story.svelte", "story": { "id": "src-lib-meter-meter-story-svelte", "title": "Meter component", "group": null, "layout": { "type": "single", "iframe": true }, "icon": null, "iconColor": null, "docsOnly": false, "variants": [{ "id": "src-lib-meter-meter-story-svelte-0", "title": "Meter with container width > 320px", "icon": null, "iconColor": null }, { "id": "src-lib-meter-meter-story-svelte-1", "title": "Meter with container width <= 320px", "icon": null, "iconColor": null }] }, "supportPluginId": "svelte4", "docsFilePath": "src/lib/Meter/Meter.story.md", "index": 0, component: Meter_story, source: () => __vitePreload(() => import("./__resolved__virtual_story-source_src-lib-meter-meter-story-svelte-qC1eYKeT.js"), true ? __vite__mapDeps([]) : void 0) }];
+let files = [{ "id": "src-lib-meter-meter-story-svelte", "path": ["Meter component"], "filePath": "src/lib/Meter/Meter.story.svelte", "story": { "id": "src-lib-meter-meter-story-svelte", "title": "Meter component", "group": null, "layout": { "type": "single", "iframe": true }, "icon": null, "iconColor": null, "docsOnly": false, "variants": [{ "id": "src-lib-meter-meter-story-svelte-0", "title": "Meter with container width > 320px", "icon": null, "iconColor": null }, { "id": "src-lib-meter-meter-story-svelte-1", "title": "Meter with container width <= 320px", "icon": null, "iconColor": null }] }, "supportPluginId": "svelte4", "docsFilePath": "src/lib/Meter/Meter.story.md", "index": 0, component: Meter_story, source: () => __vitePreload(() => import("./__resolved__virtual_story-source_src-lib-meter-meter-story-svelte-2cdd94aa.js"), true ? [] : void 0) }];
 let tree = [{ "title": "Meter component", "index": 0 }];
 const config = { "plugins": [{ "name": "builtin:tailwind-tokens" }, { "name": "builtin:vanilla-support", "supportPlugin": { "id": "vanilla", "moduleName": "/Users/devspace/Developer/Developer/DevProjects/haut-test-meter/node_modules/histoire/dist/node/builtin-plugins/vanilla-support", "setupFn": "setupVanilla" } }, { "name": "@histoire/plugin-svelte", "supportPlugin": { "id": "svelte4", "moduleName": "@histoire/plugin-svelte", "setupFn": ["setupSvelte3", "setupSvelte4"] }, "commands": [{ "id": "histoire:plugin-svelte:generate-story", "label": "Generate Svelte 3 story from component", "icon": "https://svelte.dev/favicon.png", "searchText": "generate create", "clientSetupFile": "@histoire/plugin-svelte/dist/commands/generate-story.client.js" }] }], "outDir": "/Users/devspace/Developer/Developer/DevProjects/haut-test-meter/dist/histoire", "storyMatch": ["**/*.story.vue", "**/*.story.svelte"], "storyIgnored": ["**/node_modules/**", "**/dist/**"], "supportMatch": [{ "id": "vanilla", "patterns": ["**/*.js"], "pluginIds": ["vanilla"] }, { "id": "svelte", "patterns": ["**/*.svelte"], "pluginIds": ["svelte4"] }], "tree": { "file": "title", "order": "asc" }, "theme": { "title": "Histoire", "colors": { "primary": { "50": "#fff7ed", "100": "#ffedd5", "200": "#fed7aa", "300": "#fdba74", "400": "#fb923c", "500": "#f97316", "600": "#ea580c", "700": "#c2410c", "800": "#9a3412", "900": "#7c2d12" }, "gray": { "50": "#fafafa", "100": "#f4f4f5", "200": "#e4e4e7", "300": "#d4d4d8", "400": "#a1a1aa", "500": "#71717a", "600": "#52525b", "700": "#3f3f46", "750": "#323238", "800": "#27272a", "850": "#1f1f21", "900": "#18181b", "950": "#101012" } }, "defaultColorScheme": "auto", "storeColorScheme": true, "darkClass": "dark", "logo": { "square": "@histoire/plugin-svelte/assets/histoire-svelte.svg", "light": "@histoire/plugin-svelte/assets/histoire-svelte-text.svg", "dark": "@histoire/plugin-svelte/assets/histoire-svelte-text.svg" } }, "responsivePresets": [{ "label": "Mobile (Small)", "width": 320, "height": 560 }, { "label": "Mobile (Medium)", "width": 360, "height": 640 }, { "label": "Mobile (Large)", "width": 414, "height": 896 }, { "label": "Tablet", "width": 768, "height": 1024 }, { "label": "Laptop (Small)", "width": 1024, "height": null }, { "label": "Laptop (Large)", "width": 1366, "height": null }, { "label": "Desktop", "width": 1920, "height": null }, { "label": "4K", "width": 3840, "height": null }], "backgroundPresets": [{ "label": "Transparent", "color": "transparent", "contrastColor": "#333" }, { "label": "White", "color": "#fff", "contrastColor": "#333" }, { "label": "Light gray", "color": "#aaa", "contrastColor": "#000" }, { "label": "Dark gray", "color": "#333", "contrastColor": "#fff" }, { "label": "Black", "color": "#000", "contrastColor": "#eee" }], "sandboxDarkClass": "dark", "routerMode": "hash", "build": { "excludeFromVendorsChunk": [] }, "viteIgnorePlugins": ["vite-plugin-sveltekit-compile"] };
 const logos = { square: Logo_square, light: Logo_dark, dark: Logo_dark };
@@ -1991,12 +2007,12 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: () => __vitePreload(() => import("./HomeView.vue-yEk4JmDE.js"), true ? __vite__mapDeps([0,1,2]) : void 0)
+      component: () => __vitePreload(() => import("./HomeView.vue-f83a15e6.js"), true ? ["assets/HomeView.vue-f83a15e6.js","assets/story-f86d5cdb.js","assets/vendor-579370cf.js"] : void 0)
     },
     {
       path: "/story/:storyId",
       name: "story",
-      component: () => __vitePreload(() => import("./StoryView.vue-lCzFS0qA.js"), true ? __vite__mapDeps([3,2,1,4,5,6]) : void 0)
+      component: () => __vitePreload(() => import("./StoryView.vue-b23a45e2.js"), true ? ["assets/StoryView.vue-b23a45e2.js","assets/vendor-579370cf.js","assets/story-f86d5cdb.js","assets/MobileOverlay.vue2-cababdd1.js","assets/BaseEmpty.vue-e5585e52.js","assets/state-0b051678.js"] : void 0)
     }
   ]
 });
@@ -2086,8 +2102,8 @@ function mapVariant(variant, existingVariant) {
   return result;
 }
 const clientSupportPlugins = {
-  "vanilla": () => __vitePreload(() => import("./vendor--K4wnKbb.js").then((n) => n.aR), true ? __vite__mapDeps([]) : void 0),
-  "svelte4": () => __vitePreload(() => import("./vendor--K4wnKbb.js").then((n) => n.aS), true ? __vite__mapDeps([]) : void 0)
+  "vanilla": () => __vitePreload(() => import("./vendor-579370cf.js").then((n) => n.aV), true ? [] : void 0),
+  "svelte4": () => __vitePreload(() => import("./vendor-579370cf.js").then((n) => n.aW), true ? [] : void 0)
 };
 const __default__ = {
   inheritAttrs: false
@@ -2132,9 +2148,3 @@ export {
   router as r,
   toggleDark as t
 };
-function __vite__mapDeps(indexes) {
-  if (!__vite__mapDeps.viteFileDeps) {
-    __vite__mapDeps.viteFileDeps = ["assets/HomeView.vue-yEk4JmDE.js","assets/story-4tL6wxzd.js","assets/vendor--K4wnKbb.js","assets/StoryView.vue-lCzFS0qA.js","assets/MobileOverlay.vue2-lVOAJoLq.js","assets/BaseEmpty.vue-g7xyIGpE.js","assets/state-L2jryNI-.js"]
-  }
-  return indexes.map((i) => __vite__mapDeps.viteFileDeps[i])
-}

@@ -1,36 +1,5 @@
-import { d as clientSupportPlugins, h as histoireConfig } from "./GenericMountStory.vue2-go3f0oUX.js";
-import { d as defineComponent, r as ref, al as watchEffect, ak as markRaw, o as openBlock, q as createBlock, am as mergeProps, an as resolveDynamicComponent, h as createCommentVNode, E as reactive, v as isRef, f as unref } from "./vendor--K4wnKbb.js";
-function clone(data) {
-  try {
-    return structuredClone(data);
-  } catch (e) {
-    console.warn(e, `Fallback to JSON cloning`);
-    try {
-      return JSON.parse(JSON.stringify(data));
-    } catch (e2) {
-      console.error(e2);
-    }
-    return data;
-  }
-}
-function omit(data, keys) {
-  const copy = {};
-  for (const key in data) {
-    if (!keys.includes(key)) {
-      copy[key] = data[key];
-    }
-  }
-  return copy;
-}
-function applyState(target, state, override = false) {
-  for (const key in state) {
-    if (!override && target[key] && !key.startsWith("_h") && typeof target[key] === "object" && !Array.isArray(target[key])) {
-      Object.assign(target[key], state[key]);
-    } else {
-      target[key] = state[key];
-    }
-  }
-}
+import { d as clientSupportPlugins, h as histoireConfig } from "./GenericMountStory.vue2-ba5c4601.js";
+import { d as defineComponent, r as ref, am as watchEffect, al as markRaw, o as openBlock, q as createBlock, an as mergeProps, ao as resolveDynamicComponent, h as createCommentVNode, E as reactive, v as isRef, g as unref } from "./vendor-579370cf.js";
 const __default__ = {
   inheritAttrs: false
 };
@@ -126,9 +95,6 @@ export {
   _sfc_main as _,
   applyPreviewSettings as a,
   SANDBOX_READY as b,
-  applyState as c,
-  clone as d,
   getContrastColor as g,
-  omit as o,
   toRawDeep as t
 };
