@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/svelte'
 
 import Meter from './Meter.svelte'
 
-describe('Segment', () => {
+describe('Segment component', () => {
     let root: HTMLElement
 
     async function renderComponent() {
@@ -73,7 +73,7 @@ describe('Segment', () => {
     })
 
     describe('smoothly animate its visual state change on value change', () => {
-        it('step 0: min = -1, value = -1', async () => {
+        it('step 1: min = -1, value = -1', async () => {
             renderWithValue(-1)
 
             root.setAttribute('style', 'width: 300px')
@@ -85,7 +85,7 @@ describe('Segment', () => {
             expect(firstSegmentSizes.width).toBe(6)
         })
 
-        it('step 1: min = -1, value = -0.95', async () => {
+        it('step 2: min = -1, value = -0.95', async () => {
             renderWithValue(-0.95)
 
             root.setAttribute('style', 'width: 300px')
@@ -97,8 +97,20 @@ describe('Segment', () => {
             expect(firstSegmentSizes.height).toBeGreaterThan(35)
         })
 
-        it('step 1: min = -1, value = -0.90', async () => {
+        it('step 3: min = -1, value = -0.90', async () => {
             renderWithValue(-0.9)
+
+            root.setAttribute('style', 'width: 300px')
+            const segments = root.querySelectorAll('.segment')
+            const firstSegment = segments[0]
+            const firstSegmentSizes = firstSegment?.getBoundingClientRect()
+
+            expect(firstSegmentSizes.height).toBeLessThan(36)
+            expect(firstSegmentSizes.height).toBeGreaterThan(35)
+        })
+
+        it('step 4: min = -1, value = -0.85', async () => {
+            renderWithValue(-0.85)
 
             root.setAttribute('style', 'width: 300px')
             const segments = root.querySelectorAll('.segment')
